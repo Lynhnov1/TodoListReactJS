@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+:root {
+}
+* {
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #f0e3ca;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-rendering: optimizeSpeed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.App {
+    width: 47vh;
+    height: 100vh;
+    background-color: black;
+    flex-wrap: wrap;
+    padding: 5%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.formInput,
+.formtodolist {
+    padding: 0 0 3% 0;
+    display: flex;
+    gap: 2%;
+    align-items: center;
+    justify-content: Space-between;
+}
+.todo-list,
+.formTasks,
+.tools {
+    padding: 3% 0 1% 0;
+}
+.todo-list {
+    aspect-ratio: 0.5;
+
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.notask {
+    margin-top: 20%;
+}
+.add-todo input {
+    padding: 2%;
+    margin: 2px;
+    border: 1px solid #ff8303;
+    border-radius: 5px;
+    width: 100%;
+    color: #f0e3ca;
+}
+
+.formtodolist span {
+    border: 2px solid #a35709;
+    border-radius: 5px;
+
+    color: #f0e3ca;
+}
+.add-todo input :focus {
+    border: 2px solid #a35709;
+}
+.formInput span {
+    border: 2px solid #ff8303;
+    padding: 5% 5%;
+    border-radius: 5px;
+    color: #ff8303;
+}
+
+.formtodolist {
+    border: 2px solid #a35709;
+    border-radius: 8px;
+    padding: 2%;
+}
+.yes .no {
+    border-radius: 3px;
+    padding: 3%;
+    font-weight: 200;
+}
+.yes {
+    border: 1px solid #a35709;
+}
+.no {
+    border: 1px solid #ff8303;
+}
+
+.tools span {
+    border: 1px solid #a35709;
+    padding: 3px;
+    border-radius: 3px;
+}
+.todo {
+    letter-spacing: 0em;
+    width: 100%;
+    .h1 {
+        text-align: left;
+    }
+}
+
+.tools {
+    gap: 2%;
+    display: flex;
+    justify-content: flex-end; /* Điều này sẽ đẩy các phần tử con về phía bên phải */
+}
+
+.dialog-delete {
+    width: 0;
+}
+.dialog-content {
+    background-color: #1f1e1b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 17em;
+    height: 9em;
+    border-top: 5px solid #a35709;
+    gap: 10px;
+}
+.dialog-content button {
+    padding: 2% 12%;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.dialog-content h2 {
+    font-weight: 100;
+    font-size: larger;
+    padding: 13%;
+    color: #ffff;
+}
+
+.todo-child {
+    width: 100%;
+}
+.todo-child h1,
+.todo-child a {
+    width: 33vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.todo-child a {
+    display: inline-block;
+}
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' -25, 'opsz' 20;
+}
+
+.todo-list h3 {
+    font-family: 'Inter';
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    position: relative;
+}
+
+.todo-list h3::before {
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 2px;
+    background-color: #ff8303;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.todo-list h3::after {
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 2px;
+    background-color: #ff8303;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dialog-edit {
+    background-color: #1f1e1b;
+    height: 60vh;
+    width: 44vh;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    padding: 20px;
+    margin: auto;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2%;
+    z-index: 2;
+}
+.edit-title,
+.edit-about {
+    border: 2px solid #a35709;
+    width: 100%;
+    border-radius: 4px;
+}
+.edit-title {
+    height: 10%;
+}
+.edit-about {
+    height: 85%;
+}
+.edit-about:focus {
+    border-color: #a35709;
+}
+
+.edit-confirm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+.dialog-edit button {
+    border: 2px solid #a35709;
+    padding: 2% 4%;
+    border-radius: 4px;
+}
+
+.share-box {
+    background-color: #1f1e1b;
+    width: 42vh;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding: 10px 8px;
+    margin: auto;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.add-todo input:focus {
+    border: 1.5px solid #ff8303 !important;
+}
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Add opacity to the background */
+    z-index: 1;
+}
+
+.dialog-delete {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}
